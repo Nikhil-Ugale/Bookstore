@@ -1,0 +1,17 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+<ul>
+    <h2>List</h2>
+    {% for book in books %}
+    <li>Book: {{book.id}} 
+    <br> {{book}}</li>
+    {% endfor %}
+</ul>
+
+</div>
+
+{% endblock %}
