@@ -11,5 +11,10 @@ class Book_Table(db.Model):
         self.name = name
         self.author = author
         
+   
     def __repr__(self):
-        return f"Name of Book:{self.name}; Author name:{self.author}"
+        return ("Name of Book:{}\n"
+                 "Author name:{}".format(self.name,self.author))
+       
+         
+            
