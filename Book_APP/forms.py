@@ -6,6 +6,7 @@ class AddForm(FlaskForm):
 
     name = StringField("Please enter name of the book you want",validators=[DataRequired()])
     author = StringField("Please Enter Author Name",validators=[DataRequired()])
+    price = IntegerField("Amount")
     submit = SubmitField("Submit")
 
 class DeleteForm(FlaskForm):

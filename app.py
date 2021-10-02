@@ -1,3 +1,4 @@
+import os
 from Book_APP import app,db
 from Book_APP.models import Book_Table
 from Book_APP.forms import *
@@ -18,9 +19,10 @@ def add():
     if form.validate_on_submit():
         name = form.name.data
         author = form.author.data
+        price = form.price.data
      
 
-        new_book = Book_Table(name,author)
+        new_book = Book_Table(name,author,price)
 
         db.session.add(new_book)
         db.session.commit()
@@ -55,4 +57,5 @@ def list():
 
 
 if __name__=='__main__':
-    app.run(debug=True)
+    port=int(os.environ.get('PORT',5000))
+    app.run(debug=True,host='0.0.0.0',port=port)

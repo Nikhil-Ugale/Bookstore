@@ -2,7 +2,7 @@ from Book_APP.models import Book_Table
 from Book_APP import db
 
 def test_book():
-    newbook = Book_Table('three point someone','chetan ')
+    newbook = Book_Table('three point someone','chetan ',500)
 
     db.session.add(newbook)
     db.session.commit()

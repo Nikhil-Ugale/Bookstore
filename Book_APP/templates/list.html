@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div class="jumbotron">
+<!-- <div "form-group">
 <ul>
     <h2>List</h2>
     {% for book in books %}
@@ -12,6 +12,46 @@
     {% endfor %}
 </ul>
 
-</div>
+</div> -->
+
+<!-- <div class="container">
+    {% for book in books %}
+    <div class="row">
+      <div class="col order-last">
+        {{book.id}}
+      </div>
+      <div class="col">
+        {{book.name}}
+      </div>
+      <div class="col order-first">
+        {{book.author}}
+      </div>
+    </div>
+    {% endfor %}
+
+  </div> -->
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Book ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Author</th>
+        <th scope="col">Price</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+      <tr>
+        <th scope="row">{{book.id}}</th>
+        <td>{{book.name}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.price}}</td>
+      </tr>
+      {% endfor %}
+      
+    </tbody>
+  </table>
 
 {% endblock %}
